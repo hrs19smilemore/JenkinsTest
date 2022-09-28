@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mvn clean test'
-                    junit: 'surefire-reports/*.xml', fingerprint: true
+                    junit: '**/target/surefire-reports/*.xml', fingerprint: true
             }
         }
         stage('Deploy') {
